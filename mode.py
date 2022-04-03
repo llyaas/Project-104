@@ -49,7 +49,8 @@ for height, occurance in data.items():
 mode_range, mode_occurance = 0, 0
 for range, occurance in mode_data_for_range.items():
     if occurance > mode_occurance:
-        mode_range, mode_occurance = [int(range.split("-")[1])], occurance
+        mode_range = [int(range.split("-")[0]), int(range.split("-")[1])]
+        mode_occurance = occurance
         print(mode_range)
 
 mode = float((mode_range[0] + mode_range[1])/2)
